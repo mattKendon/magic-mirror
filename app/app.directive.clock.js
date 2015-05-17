@@ -4,9 +4,9 @@
 
 angular
     .module('app')
-    .directive('mmClock', ['dateFilter', '$timeout', mmClock]);
+    .directive('hmClock', ['dateFilter', '$timeout', hmClock]);
 
-function mmClock(dateFilter, $timeout){
+function hmClock(dateFilter, $timeout){
     var directive = {
         restrict: 'E',
         scope: {
@@ -17,7 +17,7 @@ function mmClock(dateFilter, $timeout){
 
     return directive;
 
-    function LinkFunction(scope, element, attrs){
+    function LinkFunction(scope, element){
         var updateTime = function(){
             var now = Date.now();
 
