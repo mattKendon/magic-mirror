@@ -26,7 +26,10 @@ var vendor = {
 
 var app = {
     js: {
-        src: ['./app/**/*.js'],
+        src: [
+            './app/app.module.js',
+            './app/**/*.js'
+        ],
         dest: './public/javascripts/',
         watch: './app/**/*.js'
     },
