@@ -2,7 +2,9 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/vendor.min.css')
+    link(rel='stylesheet', href='/stylesheets/vendor.css')
     link(rel='stylesheet', href='/stylesheets/app.min.css')
   body
     block content
+    script(src='/javascripts/vendor.js', type='text/javascript')
+    script(src='/javascripts/app.min.js', type='text/javascript')
