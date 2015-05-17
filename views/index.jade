@@ -1,5 +1,5 @@
 extends layout
 
 block content
-  h1(id="time") 10:08
-  p 20 December 2008
+  clock(class="time", format="HH:mm:ss")
+  clock(class="date", format="d MMMM yy")
