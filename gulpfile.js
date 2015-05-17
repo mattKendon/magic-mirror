@@ -8,7 +8,12 @@ var gulp = require('gulp'),
 
 var vendor = {
     js: {
-        src: ['./bower_components/**/*.min.js'],
+        src: [
+            './bower_components/angular/angular.js',
+            './bower_components/angular-aria/angular-aria.js',
+            './bower_components/angular-animate/angular-animate.js',
+            './bower_components/angular-material/angular-material.js'
+        ],
         dest: './public/javascripts/',
         watch: './bower_components/**/*.min.js'
     },
@@ -35,6 +40,9 @@ var app = {
 gulp.task('vendor-js', function() {
     gulp.src(vendor.js.src)
         .pipe(concat('vendor.js'))
+        .pipe(gulp.dest(vendor.js.dest))
+        .pipe(uglify())
+        .pipe(rename('vendor.min.js'))
         .pipe(gulp.dest(vendor.js.dest));
 });
 
