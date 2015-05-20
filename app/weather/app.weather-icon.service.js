@@ -73,7 +73,7 @@ function weatherIconService() {
             771: {meaning: "squalls", icon: {day: "day-fog", night: "night-fog"}},
             781: {meaning: "tornado", icon: {day: "tornado", night: "tornado"}},
             //clouds
-            800: {meaning: "clear sky", icon: {day: "day-sunny", night: "night-alt-clear"}},
+            800: {meaning: "clear sky", icon: {day: "day-sunny", night: "night-clear"}},
             801: {meaning: "few clouds", icon: {day: "day-cloudy", night: "night-alt-cloudy"}},
             802: {meaning: "scattered clouds", icon: {day: "day-cloudy", night: "night-alt-cloudy"}},
             803: {meaning: "broken clouds", icon: {day: "day-cloudy", night: "night-alt-cloudy"}},
