@@ -6,9 +6,9 @@ angular
     .module('app')
     .directive('hmWeather', hmWeather);
 
-hmWeather.$inject = ['weatherService', 'weatherIconService']
+hmWeather.$inject = ['weatherService', 'weatherIconService', 'weatherDaytimeService']
 
-function hmWeather(weatherService, weatherIconService) {
+function hmWeather(weatherService, weatherIconService, weatherDaytimeService) {
     var directive = {
         restrict: 'E',
         scope: {
@@ -26,8 +26,9 @@ function hmWeather(weatherService, weatherIconService) {
         scope.icon = icon;
 
         function icon() {
-            //return "wi-day-cloudy";
-            return weatherIconService.get(scope.data.weather[0].id, true);
+            var day = weatherDaytimeService.isDay(scope.data.sys.sunrise, scope.data.sys.sunset);
+
+            return weatherIconService.get(scope.data.weather[0].id, day);
         }
 
         function get() {
