@@ -14,6 +14,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular-material": "~0.9.4"
+    "angular-material": "~0.9.4",
+    "angular-weather-directive": "shusain/angular-sh-weather#~0.0.0",
+    "moment": "~2.10.3"
   }
 }

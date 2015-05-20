@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  hm-clock(class="time", format="HH:mm")
-  hm-clock(class="date", format="d MMMM yy")
+  div(layout="row")
+    div(layout="column", layout-align="center start", flex)
+      hm-clock(class="time", format="HH:mm")
+      hm-clock(class="date", format="d MMMM yy")
+
+    div(layout="column", layout-align="center end", flex)
+      hm-weather(location="Brighton, UK")
