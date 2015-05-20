@@ -6,9 +6,9 @@ angular
     .module('app')
     .directive('hmWeather', hmWeather);
 
-hmWeather.$inject = ['weatherService', 'weatherIconService', 'weatherDaytimeService']
+hmWeather.$inject = ['$timeout', 'weatherService', 'weatherIconService', 'weatherDaytimeService']
 
-function hmWeather(weatherService, weatherIconService, weatherDaytimeService) {
+function hmWeather($timeout, weatherService, weatherIconService, weatherDaytimeService) {
     var directive = {
         restrict: 'E',
         scope: {
@@ -22,8 +22,9 @@ function hmWeather(weatherService, weatherIconService, weatherDaytimeService) {
 
     function linkFunction(scope, element) {
 
-        scope.get = get;
         scope.icon = icon;
+
+        updateWeather();
 
         function icon() {
             var day = weatherDaytimeService.isDay(scope.data.sys.sunrise, scope.data.sys.sunset);
@@ -31,14 +32,18 @@ function hmWeather(weatherService, weatherIconService, weatherDaytimeService) {
             return weatherIconService.get(scope.data.weather[0].id, day);
         }
 
-        function get() {
+        function updateWeather() {
+            console.log("Updating Weather");
+            var now = Date.now();
+            getWeather();
+            $timeout(updateWeather, 1000*60*10);
+        }
+
+        function getWeather() {
             return weatherService.get(scope.location)
                 .then(function(data) {
                     scope.data = data;
-                    console.log(scope.data);
             });
         }
-
-        scope.get();
     }
 }
