@@ -2,7 +2,8 @@
    Created by Matthew on 17/05/2015.
 
 dl(layout="row" layout-wrap layout-padding)
-  dt(ng-repeat-start="(i, day) in list", flex="80")
-    span {{ day.dt * 1000 |date: 'EEEE'}}
-  dd(ng-repeat-end, flex="20", layout-align="center center")
-    i(class='wi {{ icon(i) }}')
+  dt(ng-repeat-start="(i, day) in list", flex="33")
+    span {{ day.dt * 1000 | date: 'EEE'}}
+  dd(ng-repeat-end, flex="66", layout="row", layout-align="center center")
+    span(flex) {{ day.temp.day | number: 0 }}&deg;
+    i(class='wi {{ icon(i) }}', flex)
