@@ -130,4 +130,6 @@ gulp.task('watch', function() {
     gulp.watch(vendor.js.src, ['vendor-js']);
 });
 
-gulp.task('default', ['vendor-build', 'app-build', 'watch']);
+gulp.task('build', ['vendor-build', 'app-build'])
+
+gulp.task('default', ['build', 'watch']);
