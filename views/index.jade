@@ -1,14 +1,17 @@
 extends layout
 
 block content
-  div(layout="row", layout-align="start center", layout-padding)
+  div(layout="row", layout-align="start start", layout-padding)
     div(layout="column", layout-align="start start", flex)
       div(layout="column", layout-align="center center")
         hm-clock(class="time", format="HH:mm")
         hm-clock(class="date", format="d MMMM yyyy")
 
-    div(layout="column", layout-align="center end", flex)
+    div(layout="column", layout-align="center end", flex="20")
       hm-weather(location="Brighton, UK")
+      hm-forecast(location="Brighton, UK")
+
   div(layout="row", layout-align="center end", layout-padding, style="height: 50%;")
     hm-message
+
   hm-git-reload(hash=hash)

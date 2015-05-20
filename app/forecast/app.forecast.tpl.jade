@@ -1,0 +1,8 @@
+//
+   Created by Matthew on 17/05/2015.
+
+dl(layout="row" layout-wrap layout-padding)
+  dt(ng-repeat-start="(i, day) in list", flex="80")
+    span {{ day.dt * 1000 |date: 'EEEE'}}
+  dd(ng-repeat-end, flex="20", layout-align="center center")
+    i(class='wi {{ icon(i) }}')
