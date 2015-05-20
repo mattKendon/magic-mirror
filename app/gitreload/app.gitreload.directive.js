@@ -22,7 +22,6 @@ function hmGitReload($window, $timeout, gitReloadService) {
     function linkFunction(scope, element) {
         function autoReload() {
             gitReloadService.getHash().then(function(hash) {
-                console.log(scope.hash, hash, scope.hash != hash);
                 if (scope.hash != hash) {
                     $window.location.reload();
                 }
