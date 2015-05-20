@@ -27,7 +27,11 @@ function hmWeather($timeout, weatherService, weatherIconService, weatherDaytimeS
         updateWeather();
 
         function icon() {
-            var day = weatherDaytimeService.isDay(scope.data.sys.sunrise, scope.data.sys.sunset);
+            if (scope.data !== undefined) {
+                var day = weatherDaytimeService.isDay(scope.data.sys.sunrise, scope.data.sys.sunset);
+            } else {
+                var day = true;
+            }
 
             return weatherIconService.get(scope.data.weather[0].id, day);
         }
