@@ -124,7 +124,7 @@ gulp.task('app-build', ['app-js', 'app-scss', 'app-template']);
 
 gulp.task('watch', function() {
     gulp.watch(app.scss.src, ['app-scss']);
-    gulp.watch(app.js.src, ['app-js']);
+    gulp.watch(app.js.watch, ['app-js']);
     gulp.watch(app.template.src, ['app-template']);
     gulp.watch(vendor.css.src, ['vendor-css']);
     gulp.watch(vendor.js.src, ['vendor-js']);

@@ -9,9 +9,6 @@ angular
 function hmMessage() {
     var directive = {
         restrict: 'E',
-        scope: {
-            location: "@"
-        },
         link: linkFunction
     };
 
