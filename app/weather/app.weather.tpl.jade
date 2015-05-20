@@ -1,6 +1,7 @@
 //
    Created by Matthew on 17/05/2015.
 
-div(class="temp")
-  i(class="wi-day-cloudy-gusts")
-  span {{data.main.temp | number:0}}&deg;
+div(layout="column", layout-align="top center")
+  div(layout="row", layout-align="center center" layout-margin)
+    i(class="wi-day-cloudy-gusts", flex)
+    span(class="temperature", flex) {{ data.main.temp | number: 0}}&deg;
