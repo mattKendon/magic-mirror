@@ -1,1 +1,1 @@
-angular.module('app', ['weatherModule', 'ngMaterial']);
+angular.module('app', ['ngMaterial']);
