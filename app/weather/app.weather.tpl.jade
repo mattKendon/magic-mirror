@@ -3,5 +3,5 @@
 
 div(layout="column", layout-align="top center")
   div(layout="row", layout-align="center center" layout-margin)
-    i(class="wi-day-cloudy-gusts", flex)
+    i(class='wi {{ icon() }}', flex)
     span(class="temperature", flex) {{ data.main.temp | number: 0}}&deg;
